@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package auth;
+package pingpong;
 
 option go_package = "tzr.ppv.v1;ppv1";
 

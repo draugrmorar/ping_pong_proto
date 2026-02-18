@@ -25,6 +25,12 @@ clean:
 	rm -rf $(OUT_DIR)
 	@echo "Cleaned up."
 
+# Сгенерировать заново
+.PHONY: regen
+regen:
+	$(MAKE) clean
+	$(MAKE) gen
+
 # Установка необходимых плагинов (если не установлены)
 .PHONY: install
 install:

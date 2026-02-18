@@ -113,13 +113,13 @@ var File_pingpong_pingpong_proto protoreflect.FileDescriptor
 
 const file_pingpong_pingpong_proto_rawDesc = "" +
 	"\n" +
-	"\x17pingpong/pingpong.proto\x12\x04auth\"!\n" +
+	"\x17pingpong/pingpong.proto\x12\bpingpong\"!\n" +
 	"\vPingRequest\x12\x12\n" +
 	"\x04ping\x18\x01 \x01(\tR\x04ping\"\"\n" +
 	"\fPongResponse\x12\x12\n" +
-	"\x04pong\x18\x01 \x01(\tR\x04pong25\n" +
-	"\x04Ping\x12-\n" +
-	"\x04Ping\x12\x11.auth.PingRequest\x1a\x12.auth.PongResponseB\x11Z\x0ftzr.ppv.v1;ppv1b\x06proto3"
+	"\x04pong\x18\x01 \x01(\tR\x04pong2=\n" +
+	"\x04Ping\x125\n" +
+	"\x04Ping\x12\x15.pingpong.PingRequest\x1a\x16.pingpong.PongResponseB\x11Z\x0ftzr.ppv.v1;ppv1b\x06proto3"
 
 var (
 	file_pingpong_pingpong_proto_rawDescOnce sync.Once
@@ -135,12 +135,12 @@ func file_pingpong_pingpong_proto_rawDescGZIP() []byte {
 
 var file_pingpong_pingpong_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_pingpong_pingpong_proto_goTypes = []any{
-	(*PingRequest)(nil),  // 0: auth.PingRequest
-	(*PongResponse)(nil), // 1: auth.PongResponse
+	(*PingRequest)(nil),  // 0: pingpong.PingRequest
+	(*PongResponse)(nil), // 1: pingpong.PongResponse
 }
 var file_pingpong_pingpong_proto_depIdxs = []int32{
-	0, // 0: auth.Ping.Ping:input_type -> auth.PingRequest
-	1, // 1: auth.Ping.Ping:output_type -> auth.PongResponse
+	0, // 0: pingpong.Ping.Ping:input_type -> pingpong.PingRequest
+	1, // 1: pingpong.Ping.Ping:output_type -> pingpong.PongResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
