@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "tzr.ppv.v1;ppv1";
+
+service Ping {
+  rpc Ping(PingRequest) returns (PongResponse);
+}
+
+message PingRequest {
+  string ping = 1;
+}
+
+message PongResponse {
+  string pong = 1;
+}
