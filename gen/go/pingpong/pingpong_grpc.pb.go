@@ -4,6 +4,8 @@
 // - protoc             v6.33.4
 // source: pingpong/pingpong.proto
 
+// Пакет ping реализует простой ping-pong сервис
+
 package ppv1
 
 import (
@@ -25,7 +27,10 @@ const (
 // PingClient is the client API for Ping service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// Ping service предоставляет метод для проверки соединения
 type PingClient interface {
+	// Ping принимает сообщение и возвращает pong
 	Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PongResponse, error)
 }
 
@@ -50,7 +55,10 @@ func (c *pingClient) Ping(ctx context.Context, in *PingRequest, opts ...grpc.Cal
 // PingServer is the server API for Ping service.
 // All implementations must embed UnimplementedPingServer
 // for forward compatibility.
+//
+// Ping service предоставляет метод для проверки соединения
 type PingServer interface {
+	// Ping принимает сообщение и возвращает pong
 	Ping(context.Context, *PingRequest) (*PongResponse, error)
 	mustEmbedUnimplementedPingServer()
 }

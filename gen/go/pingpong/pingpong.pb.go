@@ -4,6 +4,8 @@
 // 	protoc        v6.33.4
 // source: pingpong/pingpong.proto
 
+// Пакет ping реализует простой ping-pong сервис
+
 package ppv1
 
 import (
@@ -21,9 +23,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Запрос на ping содержит сообщение
 type PingRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Ping          string                 `protobuf:"bytes,1,opt,name=ping,proto3" json:"ping,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Текст сообщения для отправки
+	Ping          string `protobuf:"bytes,1,opt,name=ping,proto3" json:"ping,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -65,9 +69,11 @@ func (x *PingRequest) GetPing() string {
 	return ""
 }
 
+// Ответ на ping содержит ответное сообщение
 type PongResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Pong          string                 `protobuf:"bytes,1,opt,name=pong,proto3" json:"pong,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Текст ответа "pong" если прислали "ping"
+	Pong          string `protobuf:"bytes,1,opt,name=pong,proto3" json:"pong,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

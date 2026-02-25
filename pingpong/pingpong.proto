@@ -1,17 +1,23 @@
 syntax = "proto3";
 
+// Пакет ping реализует простой ping-pong сервис
 package pingpong;
 
 option go_package = "tzr.ppv.v1;ppv1";
 
+// Ping service предоставляет метод для проверки соединения
 service Ping {
+  // Ping принимает сообщение и возвращает pong
   rpc Ping(PingRequest) returns (PongResponse);
 }
 
+// Запрос на ping содержит сообщение
 message PingRequest {
+  // Текст сообщения для отправки
   string ping = 1;
 }
-
+// Ответ на ping содержит ответное сообщение
 message PongResponse {
+  // Текст ответа "pong" если прислали "ping"
   string pong = 1;
 }

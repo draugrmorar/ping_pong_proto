@@ -1,0 +1,20 @@
+# 🏓 Ping-Pong gRPC API {{range .Files}} {{$file_name := .Name}}{{range .Services}}
+## Сервисы:
+### {{.Name}}
+{{.Description}}
+#### Методы: {{range .Methods -}}<br>
+##### {{.Name}}
+- Описание: {{nobr .Description}}
+- Запрос:   [{{.RequestLongType}}](#{{.RequestLongType}})
+- Ответ:    [{{.ResponseLongType}}](#{{.ResponseLongType}})
+{{end}}{{end}}
+## Сообщения: {{range .Messages}}
+### {{.LongName}} ({{.Description}}) {{if .HasFields}}
+```json
+{
+    {{range .Fields -}}
+    {{.Name}} : {{.LongType}}{{end}}{{end}}
+}
+```
+{{end}}
+{{end}}
