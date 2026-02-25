@@ -1,6 +1,3 @@
-# Makefile для генерации Go файлов из Protobuf
-
-# Переменные
 PROTOC = protoc
 PROTO_DIR = ./pingpong
 OUT_DIR = ./gen/go
@@ -8,7 +5,7 @@ PROTO_FILES = $(shell find $(PROTO_DIR) -name "*.proto")
 
 # Команда по умолчанию
 .PHONY: all
-all: clean gen
+all: regen
 
 # Генерация Go-кода
 .PHONY: gen
@@ -45,3 +42,8 @@ install:
 docs:
 	$(PROTOC) --doc_out=. --doc_opt=docs/template.tmpl,API.md $(PROTO_FILES)
 	@echo "✅ Документация создана в API.md"
+
+.PHONY: tidy
+tidy:
+	@echo "Обновление зависимостей"
+	go mod tidy
